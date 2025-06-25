@@ -1,0 +1,92 @@
+@if(isTrending()){
+<div
+  class="card-container trending"
+  [ngStyle]="{
+    '--small-trending-BgImg': 'url(' + smallTrendingBackgroundImage() + ')',
+    '--large-trending-BgImg': 'url(' + largeTrendingBackgroundImage() + ')'
+  }"
+>
+  <div class="overlay">
+    <button>
+      <img src="assets/icon-play.svg" alt="play icon" class="play-icon" />
+      <h2 class="play-text">Play</h2>
+    </button>
+  </div>
+  <div class="bookmark-background" (click)="toggleBookmarked()">
+    @if(isBookmarked()){
+    <img
+      src="assets/icon-bookmark-full.svg"
+      alt="nope not today"
+      class="bookmark"
+    />
+    } @else{
+    <img
+      src="assets/icon-bookmark-empty.svg"
+      alt="nope not today"
+      class="bookmark"
+    />
+    }
+  </div>
+  <div class="flex-container">
+    <div class="info">
+      <p class="trend">{{ year() }}</p>
+      <span class="seperator-dot"></span>
+      <img
+        [src]="categoryIconSrc()"
+        [alt]="categoryIconAlt()"
+        class="movie-icon"
+      />
+      <p class="trend">{{ category() }}</p>
+      <span class="seperator-dot"></span>
+      <p class="trend">{{ rating() }}</p>
+    </div>
+    <h1 class="title trend">{{ title() }}</h1>
+  </div>
+</div>
+} @if (!isTrending()){
+<div
+  class="card-container regular"
+  [ngStyle]="{
+    '--small-regular-BgImg': 'url(' + smallRegularBackgroundImage() + ')',
+    '--medium-regular-BgImg': 'url(' + mediumRegularBackgroundImage() + ')',
+    '--large-regular-BgImg': 'url(' + largeRegularBackgroundImage() + ')'
+  }"
+>
+  <div class="overlay">
+    <button>
+      <img src="assets/icon-play.svg" alt="play icon" class="play-icon" />
+      <h2 class="play-text">Play</h2>
+    </button>
+  </div>
+  <div class="bookmark-background" (click)="toggleBookmarked()">
+    @if(isBookmarked()){
+    <img
+      src="assets/icon-bookmark-full.svg"
+      alt="nope not today"
+      class="bookmark"
+    />
+    } @else{
+    <img
+      src="assets/icon-bookmark-empty.svg"
+      alt="nope not today"
+      class="bookmark"
+    />
+    }
+  </div>
+</div>
+<div class="flex-container">
+  <div class="info">
+    <p class="reg">{{ year() }}</p>
+    <span class="seperator-dot"></span>
+    <img
+      [src]="categoryIconSrc()"
+      [alt]="categoryIconAlt()"
+      class="movie-icon"
+    />
+    <p class="reg">{{ category() }}</p>
+    <span class="seperator-dot"></span>
+    <p class="reg">{{ rating() }}</p>
+  </div>
+  <h1 class="title reg">{{ title() }}</h1>
+</div>
+}

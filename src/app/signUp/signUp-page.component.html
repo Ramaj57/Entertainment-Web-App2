@@ -1,0 +1,46 @@
+<div class="page-container">
+  <img src="assets/logo.svg" alt="" class="logo" />
+  <div class="inputArea">
+    <h1 class="signUpTitle">Sign Up</h1>
+    <form (ngSubmit)="onSignUp()">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        class="email form-control"
+        [(ngModel)]="enteredEmail"
+        (keypress)="clearErrors()"
+        required
+      />
+      <p class="email-error error">{{ emailErrorMsg() }}</p>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="newPass form-control"
+        [(ngModel)]="enteredPassword"
+        (keypress)="clearErrors()"
+        required
+      />
+      <p class="password-error error">{{ passwordErrorMsg() }}</p>
+      <input
+        type="password"
+        name="repeatPassword"
+        placeholder="Repeat Password"
+        class="repeatPass form-control"
+        [(ngModel)]="enteredRepeatPassword"
+        (keypress)="clearErrors()"
+        required
+      />
+      <p class="repeat-password-error error">{{ passwordErrorMsg() }}</p>
+      <p class="errorMsg error">{{ errorMsg() }}</p>
+      <p class="emailExistsMsg error">{{ emailExistsMsg() }}</p>
+      <button type="submit">Create an account</button>
+      <p>
+        Already have an account?<a [routerLink]="['/login']"
+          >&nbsp;&nbsp;Login</a
+        >
+      </p>
+    </form>
+  </div>
+</div>

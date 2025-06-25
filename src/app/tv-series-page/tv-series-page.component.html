@@ -1,0 +1,16 @@
+<app-search-bar (search)="onFilterTV($event)" />
+<h1>TV Series</h1>
+<div class="grid-container">
+  @for(data of filteredTvSeries();track data.title){
+  <app-media-card
+    [title]="data.title"
+    [year]="data.year"
+    [category]="data.category"
+    [rating]="data.rating"
+    [smallRegularBackgroundImage]="data.thumbnail.regular.small"
+    [mediumRegularBackgroundImage]="data.thumbnail.regular.medium"
+    [largeRegularBackgroundImage]="data.thumbnail.regular.large"
+    (bookmarkToggled)="toggleBookmark(data)"
+  />
+  }
+</div>

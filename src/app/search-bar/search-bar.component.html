@@ -1,0 +1,10 @@
+<div class="searchArea">
+  <img src="assets/icon-search.svg" alt="" class="searchIcon" />
+  <input
+    type="text"
+    name="search"
+    placeholder="Search for movies or TV series"
+    [(ngModel)]="searchFilter"
+    (input)="onSearch()"
+  />
+</div>

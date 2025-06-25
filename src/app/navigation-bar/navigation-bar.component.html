@@ -1,0 +1,18 @@
+<nav>
+  <img src="assets/logo.svg" alt="" class="logo" />
+  <div class="icon-grp">
+    <a [routerLink]="['/home']" routerLinkActive="selected"
+      ><img src="assets/icon-nav-home.svg" alt="" class="home-icon"
+    /></a>
+    <a [routerLink]="['/movies']" routerLinkActive="selected"
+      ><img src="assets/icon-nav-movies.svg" alt="" class="movies-icon"
+    /></a>
+    <a [routerLink]="['/tvSeries']" routerLinkActive="selected"
+      ><img src="assets/icon-nav-tv-series.svg" alt="" class="tv-series-icon"
+    /></a>
+    <a [routerLink]="['/bookmarked']" routerLinkActive="selected"
+      ><img src="assets/icon-nav-bookmark.svg" alt="" class="bookmark-icon"
+    /></a>
+  </div>
+  <a [routerLink]="['/logout']"><img src="assets/image-avatar.png" alt="" class="avatar" /></a>
+</nav>

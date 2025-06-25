@@ -1,0 +1,18 @@
+<div class="carousel-container">
+  <h1>Trending</h1>
+  <div class="card" #carousel>
+    @for(data of trendingList();track data.title){
+    <app-media-card
+      class="media-card"
+      [title]="data.title"
+      [year]="data.year"
+      [category]="data.category"
+      [rating]="data.rating"
+      [isTrending]="data.isTrending"
+      [smallTrendingBackgroundImage]="data.thumbnail.trending!.small"
+      [largeTrendingBackgroundImage]="data.thumbnail.trending!.large"
+      (bookmarkToggled)="toggleBookmark(data)"
+    />
+    }
+  </div>
+</div>

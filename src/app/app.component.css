@@ -1,0 +1,19 @@
+.background { 
+  background-color: var(--darkBlue);
+  min-height:100vh;
+  padding-bottom: 1rem;
+}
+
+@media(min-width:48rem){
+  .background{
+    padding-top: 1.4375rem;
+    padding-bottom: 1.56rem;
+  }
+}
+
+@media(min-width:90rem){
+  .background{
+    padding-bottom: 2.25rem;
+  } 
+}
+

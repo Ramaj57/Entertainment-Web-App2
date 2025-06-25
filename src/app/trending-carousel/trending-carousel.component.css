@@ -1,0 +1,59 @@
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+.card {
+  margin-left: 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -0.019rem;
+  color: var(--white);
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.media-card {
+  margin-right: 1rem;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+@media (min-width: 48rem) {
+  h1,
+  .card {
+    margin-left: 25px;
+  }
+
+  h1 {
+    margin-bottom: 1.56rem;
+    font-size: 2rem;
+    letter-spacing: -0.031rem;
+    color: var(--white);
+  }
+
+  .media-card {
+    margin-right: 2.5rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  h1,
+  .card {
+    margin: 0;
+  }
+
+  h1 {
+    margin-bottom: 1.56rem;
+  }
+}

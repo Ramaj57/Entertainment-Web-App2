@@ -1,0 +1,34 @@
+<div class="page-container">
+  <img src="assets/logo.svg" alt="" class="logo" />
+  <div class="inputArea">
+    <h1 class="loginTitle">Login</h1>
+    <form (ngSubmit)="onLogin()">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        class="email form-control"
+        [(ngModel)]="enteredEmail"
+        (keypress)="clearErrors()"
+        required
+      />
+      <p class="email-error error">{{ emailErrorMsg() }}</p>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        class="pass form-control"
+        [(ngModel)]="enteredPassword"
+        (keypress)="clearErrors()"
+        required
+      />
+      <p class="errorMsg error">{{ errorMsg() }}</p>
+      <button>Login to your account</button>
+      <p class="signUpLink">
+        Don't have an account?<a [routerLink]="['/signUp']"
+          >&nbsp;&nbsp;Sign Up</a
+        >
+      </p>
+    </form>
+  </div>
+</div>

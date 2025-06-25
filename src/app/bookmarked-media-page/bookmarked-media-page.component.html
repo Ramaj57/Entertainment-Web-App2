@@ -1,0 +1,31 @@
+<app-search-bar (search)="onFilterBookmarked($event)" />
+<h1>Bookmarked Movies</h1>
+<div class="grid-container">
+  @for(movie of filteredBookmarkedMovies();track movie.title){
+  <app-media-card
+    [title]="movie.title"
+    [year]="movie.year"
+    [category]="movie.category"
+    [rating]="movie.rating"
+    [smallRegularBackgroundImage]="movie.thumbnail.regular.small"
+    [mediumRegularBackgroundImage]="movie.thumbnail.regular.medium"
+    [largeRegularBackgroundImage]="movie.thumbnail.regular.large"
+    (bookmarkToggled)="toggleBookmark(movie)"
+  />
+  }
+</div>
+<h1>Bookmarked TV Series</h1>
+<div class="grid-container">
+  @for(tvSeries of filteredBookmarkedTV();track tvSeries.title){
+  <app-media-card
+    [title]="tvSeries.title"
+    [year]="tvSeries.year"
+    [category]="tvSeries.category"
+    [rating]="tvSeries.rating"
+    [smallRegularBackgroundImage]="tvSeries.thumbnail.regular.small"
+    [mediumRegularBackgroundImage]="tvSeries.thumbnail.regular.medium"
+    [largeRegularBackgroundImage]="tvSeries.thumbnail.regular.large"
+    (bookmarkToggled)="toggleBookmark(tvSeries)"
+  />
+  }
+</div>

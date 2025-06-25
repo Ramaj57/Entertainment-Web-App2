@@ -1,0 +1,20 @@
+<app-search-bar (search)="onFilterhome($event)" />
+<div class="trendingCarousel">
+  <app-trending-carousel />
+</div>
+<h1>Recommended for you</h1>
+<div class="grid-container">
+  @for(data of filteredHome();track data.title){ @if(!data.isTrending){
+  <app-media-card
+    [title]="data.title"
+    [year]="data.year"
+    [category]="data.category"
+    [rating]="data.rating"
+    [isTrending]="data.isTrending"
+    [smallRegularBackgroundImage]="data.thumbnail.regular.small"
+    [mediumRegularBackgroundImage]="data.thumbnail.regular.medium"
+    [largeRegularBackgroundImage]="data.thumbnail.regular.large"
+    (bookmarkToggled)="toggleBookmark(data)"
+  />
+  } }
+</div>
