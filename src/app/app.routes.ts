@@ -23,9 +23,9 @@ export const loginSignupGuard: CanMatchFn = () => {
 export const authGuard: CanMatchFn = () => {
   const router = inject(Router);
   const userService = inject(UserService);
-  const isLoggedIn = userService.isLoggedIn();
+  const isLoggedIn = computed(() => userService.isLoggedIn());
 
-  if (!isLoggedIn) {
+  if (!isLoggedIn()) {
     router.navigate(['/']);
     return false;
   } else return true;
