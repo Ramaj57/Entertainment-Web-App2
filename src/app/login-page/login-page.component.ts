@@ -15,8 +15,9 @@ export class LoginPageComponent {
   router = inject(Router);
   enteredEmail = signal('');
   enteredPassword = signal('');
-  errorMsg = signal<string>('');
+  requiredErrorMsg = signal<string>('');
   emailErrorMsg = signal<string>('');
+  invalidErrorMsg = signal<string>('');
 
   clearInput() {
     this.enteredEmail.set('');
@@ -24,8 +25,9 @@ export class LoginPageComponent {
   }
 
   clearErrors() {
-    this.errorMsg.set('');
+    this.requiredErrorMsg.set('');
     this.emailErrorMsg.set('');
+    this.invalidErrorMsg.set('');
   }
 
   onLogin() {
@@ -34,13 +36,7 @@ export class LoginPageComponent {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === '' || password === '') {
-      this.errorMsg.set('All fields are required.');
-      this.clearInput();
-      return;
-    }
-
-    if (email === password) {
-      this.errorMsg.set('email and password must be different.');
+      this.requiredErrorMsg.set('All fields are required.');
       this.clearInput();
       return;
     }
@@ -60,7 +56,7 @@ export class LoginPageComponent {
       this.router.navigate(['/home']);
     } else {
       this.clearInput();
-      this.errorMsg.set('Invalid email or password.');
+      this.invalidErrorMsg.set('Invalid email or password.');
     }
   }
 }

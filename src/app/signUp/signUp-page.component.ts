@@ -16,10 +16,11 @@ export class SignUpPageComponent {
   enteredEmail = signal('');
   enteredPassword = signal('');
   enteredRepeatPassword = signal('');
-  errorMsg = signal<string>('');
+  requiredErrorMsg = signal<string>('');
   passwordErrorMsg = signal<string>('');
   emailErrorMsg = signal<string>('');
   emailExistsMsg = signal<string>('');
+  sameErrorMsg = signal<string>('');
 
   clearInput() {
     this.enteredEmail.set('');
@@ -28,10 +29,11 @@ export class SignUpPageComponent {
   }
 
   clearErrors() {
-    this.errorMsg.set('');
+    this.requiredErrorMsg.set('');
     this.passwordErrorMsg.set('');
     this.emailErrorMsg.set('');
     this.emailExistsMsg.set('');
+    this.sameErrorMsg.set('');
   }
 
   onSignUp() {
@@ -41,13 +43,13 @@ export class SignUpPageComponent {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     if (email === '' || password === '' || repeatPassword === '') {
-      this.errorMsg.set('All fields are required.');
+      this.requiredErrorMsg.set('All fields are required.');
       this.clearInput();
       return;
     }
 
     if (email === password) {
-      this.errorMsg.set('Email and password must be different.');
+      this.sameErrorMsg.set('Email and password must be different.');
       this.clearInput();
       return;
     }
