@@ -12,7 +12,7 @@
         (keypress)="clearErrors()"
         required
       />
-      <p class="email-error error">{{ emailErrorMsg() }}</p>
+      <p class="emailErrorMsg error">{{ emailErrorMsg() }}</p>
       <input
         type="password"
         name="password"
@@ -22,8 +22,9 @@
         (keypress)="clearErrors()"
         required
       />
-      <p class="errorMsg error">{{ errorMsg() }}</p>
-      <button>Login to your account</button>
+      <p class="requiredErrorMsg error">{{ requiredErrorMsg() }}</p>
+      <p class="invalidErrorMsg error">{{ invalidErrorMsg() }}</p>
+      <button (click)="clearErrors()">Login to your account</button>
       <p class="signUpLink">
         Don't have an account?<a [routerLink]="['/signUp']"
           >&nbsp;&nbsp;Sign Up</a

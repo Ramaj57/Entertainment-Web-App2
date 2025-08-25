@@ -33,9 +33,10 @@
         required
       />
       <p class="repeat-password-error error">{{ passwordErrorMsg() }}</p>
-      <p class="errorMsg error">{{ errorMsg() }}</p>
+      <p class="requiredErrorMsg error">{{ requiredErrorMsg() }}</p>
       <p class="emailExistsMsg error">{{ emailExistsMsg() }}</p>
-      <button type="submit">Create an account</button>
+      <p class="sameErrorMsg error">{{ sameErrorMsg() }}</p>
+      <button type="submit" (click)="clearErrors()">Create an account</button>
       <p>
         Already have an account?<a [routerLink]="['/login']"
           >&nbsp;&nbsp;Login</a
