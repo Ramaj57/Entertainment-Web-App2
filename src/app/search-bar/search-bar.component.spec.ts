@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { SearchBarComponent } from './search-bar.component';
 

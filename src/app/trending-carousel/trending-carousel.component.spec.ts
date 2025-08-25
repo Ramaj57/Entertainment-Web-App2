@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { TrendingCarouselComponent } from './trending-carousel.component';
 
@@ -8,7 +9,8 @@ describe('TrendingCarouselComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TrendingCarouselComponent]
+      imports: [TrendingCarouselComponent],
+      providers: [provideHttpClient(withInterceptorsFromDi())]
     })
     .compileComponents();
 

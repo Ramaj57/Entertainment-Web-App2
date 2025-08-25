@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SignUpPageComponent } from './signUp-page.component';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('SignUpPageComponent', () => {
   let component: SignUpPageComponent;
@@ -7,7 +8,8 @@ describe('SignUpPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SignUpPageComponent]
+      imports: [SignUpPageComponent],
+      providers: [provideHttpClient(withInterceptorsFromDi())]
     })
     .compileComponents();
 

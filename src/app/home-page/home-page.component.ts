@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { TrendingCarouselComponent } from '../trending-carousel/trending-carousel.component';
 import { MediaCardComponent } from '../media-card/media-card.component';
 import { BookmarkService, Media } from '../bookmark.service';
@@ -11,23 +11,27 @@ import { SearchBarComponent } from '../search-bar/search-bar.component';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit{
   bookmarkService = inject(BookmarkService);
   mediaList = this.bookmarkService.mediaList;
-  filteredHome = signal<Media[]>(this.mediaList());
+  filterText = signal<string>('');
+  filteredHome = computed(()=> this.mediaList().filter((media)=>
+    media.title.toLowerCase().includes(this.filterText().toLowerCase())));
+
+resultSize = computed(()=>this.filteredHome().length);
+searchResults = signal('Found ' + this.resultSize() + ' results for "' + this.filterText() + '"');
+    
+  heading = signal<string>('');
 
   toggleBookmark(media: Media): void {
     this.bookmarkService.toggleBookmark(media);
   }
 
   onFilterhome(searchFilter: string) {
-    const filterText = searchFilter.toLowerCase();
-    filterText
-      ? this.filteredHome.set(
-          this.mediaList().filter((media) =>
-            media.title.toLowerCase().includes(filterText)
-          )
-        )
-      : this.filteredHome.set(this.mediaList());
+    this.filterText.set(searchFilter);
   }
+
+  ngOnInit(): void {
+this.bookmarkService.loadFromLocalStorage();
+}
 }

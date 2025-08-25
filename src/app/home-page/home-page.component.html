@@ -2,7 +2,12 @@
 <div class="trendingCarousel">
   <app-trending-carousel />
 </div>
-<h1>Recommended for you</h1>
+@if (this.filterText() === ''){
+  <h1>Reccommended for you</h1>
+} @else {
+    <h1>{{'Found ' + this.resultSize() + ' results for "' + this.filterText() + '"'}}</h1>
+
+}
 <div class="grid-container">
   @for(data of filteredHome();track data.title){ @if(!data.isTrending){
   <app-media-card

@@ -15,7 +15,7 @@ export const loginSignupGuard: CanMatchFn = () => {
   const isLoggedIn = computed(() => userService.isLoggedIn());
 
   if (isLoggedIn()) {
-    router.navigate(['/home']);
+    router.navigate(['/movies']);
     return false;
   } else return true;
 };

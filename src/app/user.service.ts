@@ -12,11 +12,7 @@ export class UserService {
   private storageKey = 'users';
   isLoggedIn = signal(false);
 
-  setLoggedIn(value: boolean) {
-    this.isLoggedIn.set(value);
-  }
-
-  getUsers(): User[] {
+  private getUsers(): User[] {
     return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
   }
 

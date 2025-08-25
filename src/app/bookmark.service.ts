@@ -40,9 +40,9 @@ export class BookmarkService {
 
   private readonly storageKey = signal('bookmarkedMedia');
 
-  constructor() {
-    this.loadFromLocalStorage();
-  }
+  // constructor() {
+  //   this.loadFromLocalStorage();
+  // }
 
   getAllMedia(): Observable<Media[]> {
     return this.http.get<Media[]>(this.dataUrl);
@@ -59,7 +59,7 @@ export class BookmarkService {
     this.saveToLocalStorage();
   }
 
-  private saveToLocalStorage() {
+  public saveToLocalStorage() {
     try {
       const data = JSON.stringify(this.mediaList());
       localStorage.setItem(this.storageKey(), data);
@@ -68,7 +68,7 @@ export class BookmarkService {
     }
   }
 
-  private loadFromLocalStorage() {
+  public loadFromLocalStorage() {
     try {
       const stored = localStorage.getItem(this.storageKey());
       if (stored) {

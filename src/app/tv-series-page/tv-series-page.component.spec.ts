@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { TvSeriesPageComponent } from './tv-series-page.component';
 
@@ -8,7 +9,8 @@ describe('TvSeriesPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TvSeriesPageComponent]
+      imports: [TvSeriesPageComponent],
+      providers: [provideHttpClient(withInterceptorsFromDi())]
     })
     .compileComponents();
 
