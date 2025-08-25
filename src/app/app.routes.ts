@@ -35,8 +35,7 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full',
-    canMatch: [loginSignupGuard],
+    pathMatch: 'full'
   },
   {
     path: 'signUp',
