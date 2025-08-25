@@ -67,13 +67,18 @@ a {
   font-size: 0.8125rem;
 }
 
-.email-error {
-  top: 20rem;
+.emailErrorMsg {
+  top: 15rem;
   left: 12.5rem;
 }
 
-.errorMsg {
-  top: 26.75rem;
+.requiredErrorMsg {
+  top: 21.75rem;
+  left: 12.5rem;
+}
+
+.invalidErrorMsg {
+  top: 21.75rem;
   left: 11rem;
 }
 
@@ -110,14 +115,19 @@ a {
     height: 23.31rem;
   }
 
-  .email-error {
+  .emailErrorMsg {
     top: 19.5625rem;
     left: 26.875rem;
   }
 
-  .errorMsg {
-    top: 21.75rem;
-    left: 12.5rem;
+  .requiredErrorMsg {
+    top: 26.3rem;
+    left: 26.5rem;
+  }
+
+  .invalidErrorMsg {
+    top: 26.3rem;
+    left: 25.3rem;
   }
 
   button {
@@ -135,13 +145,18 @@ a {
     margin: 4.875rem 0 5.188rem 0;
   }
 
-  .email-error {
+  .emailErrorMsg {
     top: 20rem;
     left: 47.5rem;
   }
 
-  .errorMsg {
+  .requiredErrorMsg {
     top: 26.75rem;
     left: 47.5rem;
+  }
+
+  .invalidErrorMsg {
+    top: 26.75rem;
+    left: 46.3rem;
   }
 }

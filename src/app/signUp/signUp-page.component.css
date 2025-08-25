@@ -73,28 +73,33 @@ button {
 }
 
 .email-error {
-  top: 19.8rem;
+  top: 14.8rem;
   left: 12.5rem;
 }
 
 .password-error {
-  top: 27.3125rem;
-  left: 12.5rem;
+  top: 18.5rem;
+  left: 12rem;
 }
 
 .repeat-password-error {
-  top: 23.5625rem;
-  left: 12.5rem;
+  top: 22.5rem;
+  left: 12rem;
 }
 
-.errorMsg {
+.requiredErrorMsg {
   top: 25.5rem;
   left: 12.5rem;
 }
 
 .emailExistsMsg {
-  top: 30.1875rem;
+  top: 25.3rem;
   left: 8.5rem;
+}
+
+.sameErrorMsg {
+  top: 25.5rem;
+  left: 7rem;
 }
 
 button {
@@ -134,28 +139,32 @@ a {
   }
 
   .email-error {
-    top: 26.5rem;
-    left: 26.875rem;
+    top: 20rem;
+    left: 26.3rem;
   }
 
   .password-error {
-    top: 30.5625rem;
+    top: 24rem;
     left: 26.25rem;
   }
 
   .repeat-password-error {
-    top: 34.3rem;
+    top: 27.5rem;
     left: 26.25rem;
   }
 
-  .errorMsg {
-    top: 36.8rem;
+  .requiredErrorMsg {
+    top: 30.3rem;
     left: 26.875rem;
   }
 
   .emailExistsMsg {
-    top: 36.6rem;
+    top: 30.3rem;
     left: 22.5rem;
+  }
+  .sameErrorMsg {
+    top: 30.3rem;
+    left: 21rem;
   }
 
   button {
@@ -170,26 +179,31 @@ a {
 
   .email-error {
     top: 20rem;
-    left: 52.5rem;
+    left: 47.3rem;
   }
 
   .password-error {
     top: 24rem;
-    left: 52.5rem;
+    left: 47rem;
   }
 
   .repeat-password-error {
     top: 27.875rem;
-    left: 52.5rem;
+    left: 47rem;
   }
 
-  .errorMsg {
+  .requiredErrorMsg {
     top: 30.1875rem;
-    left: 52.5rem;
+    left: 48rem;
   }
 
   .emailExistsMsg {
     top: 30.1875rem;
-    left: 48.5rem;
+    left: 43.5rem;
+  }
+
+  .sameErrorMsg {
+    top: 30.1875rem;
+    left: 42rem;
   }
 }
